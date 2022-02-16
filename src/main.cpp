@@ -87,7 +87,7 @@ void auto_select(bool is_auton)
                 new_mexico();
             break;
         case 7:
-            pros::lcd::set_text(2, "Test skills")
+            pros::lcd::set_text(2, "Test skills");
             if (is_auton)
                 Test_skills_auton();
             break;

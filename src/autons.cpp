@@ -1,5 +1,5 @@
 #include "main.h"
-
+#define motor_speed = 100
 
 const int DRIVE_SPEED = 110;
 const int TURN_SPEED  = 90;
@@ -245,8 +245,10 @@ test_auton() {
 
 
 void
-    Test_skills_auton() {
-
+Test_skills_auton() {
+    pros::Motor drive (14);
+    motor_speed(500);
+    pros::delay (500);
     }
 
 
