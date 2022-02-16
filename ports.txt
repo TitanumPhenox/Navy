@@ -1,0 +1,13 @@
+L_Motor = 14
+L2_Motor = 2
+L3_Motor = 12
+R_Motor = 3
+R2_Motor = 1
+R3_Motor = 18
+
+Mogo = A
+Lift = 11
+Tilter/Claw = B
+Take Take = 16
+
+IMU = 19
