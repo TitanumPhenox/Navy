@@ -12,7 +12,7 @@ void auto_7();
 void auto_8();
 void auto_9();
 void auto_10();
-
+void Test_skills_auton();
 void test_auton();
 
 void solo_awp();

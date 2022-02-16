@@ -5,7 +5,6 @@ const int DRIVE_SPEED = 110;
 const int TURN_SPEED  = 90;
 const int SWING_SPEED = 90;
 
-
 ///
 // TiP Autons
 ///
@@ -246,9 +245,9 @@ test_auton() {
 
 
 void
-auto_6() {
+    Test_skills_auton() {
 
-}
+    }
 
 
 

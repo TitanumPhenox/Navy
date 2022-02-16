@@ -37,7 +37,7 @@ void on_center_button()
     }
 }
 
-const int num_of_pages = 7;
+const int num_of_pages = 8;
 int current_page = 0;
 
 void auto_select(bool is_auton)
@@ -85,6 +85,11 @@ void auto_select(bool is_auton)
             pros::lcd::set_text(2, "New Mexico");
             if (is_auton)
                 new_mexico();
+            break;
+        case 7:
+            pros::lcd::set_text(2, "Test skills")
+            if (is_auton)
+                Test_skills_auton();
             break;
         default:
             break;
