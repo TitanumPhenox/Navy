@@ -15,7 +15,7 @@ bool is_there = false;
 int tilter_port = 17;
 pros::Motor tilter(tilter_port, MOTOR_GEARSET_36, true, MOTOR_ENCODER_DEGREES);
 
-void set_tilter(int input) { tilter = input; }
+void set_tilter(bool input) { if (input == true) {tilter = true;} else {tilter = false;} }
 
 void zero_tilter() { tilter.tare_position(); }
 int get_tilter() { return tilter.get_position(); }
@@ -167,12 +167,12 @@ void tilter_control()
 
 void tilter_control_manuel()
 {
-    if (master.get_digital(DIGITAL_DOWN))
+    if (master.get_digital(DIGITAL_UP))
     {
         ///set_tilter(127);
         tilterClamp.set_value(true);
     }
-    else if (master.get_digital(DIGITAL_UP))
+    else if (master.get_digital(DIGITAL_DOWN))
     {
         ///set_tilter(-127);
         tilterClamp.set_value(false);

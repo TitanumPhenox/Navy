@@ -2,7 +2,7 @@
 
 extern bool tilter_up;
 
-void set_tilter(int input);
+void set_tilter(bool input);
 void zero_tilter();
 int get_tilter();
 int get_tilter_vel();

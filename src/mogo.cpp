@@ -144,12 +144,12 @@ void mogo_control()
 
 void mogo_control_manual()
 {
-    if (master.get_digital(DIGITAL_L1))
+    if (master.get_digital(DIGITAL_L2))
     {
         ///set_mogo(127);
         mogoClamp.set_value(true);
     }
-    else if (master.get_digital(DIGITAL_L2))
+    else if (master.get_digital(DIGITAL_L1))
     {
         ///set_mogo(-127);
         mogoClamp.set_value(false);

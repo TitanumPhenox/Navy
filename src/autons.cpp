@@ -246,9 +246,7 @@ test_auton() {
 
 void
 Test_skills_auton() {
-    pros::Motor drive (14);
-    motor_speed(500);
-    pros::delay (500);
+
     }
 
 

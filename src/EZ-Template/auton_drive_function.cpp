@@ -528,17 +528,15 @@ void set_motors_stop() {
     l2_motor.move_voltage(0);
     r_motor.move_voltage(0);
     r2_motor.move_voltage(0);
-    set_mogo(0);
-    set_tilter(0);
     set_lift(0);
 }
 
 void set_motors_drive(int voltage) {
     l_motor.move_voltage(voltage);
-    //l2_motor.move_voltage(voltage);
+    l2_motor.move_voltage(voltage);
     l3_motor.move_voltage(voltage);
     r_motor.move_voltage(-voltage);
-    //r2_motor.move_voltage(-voltage);
+    r2_motor.move_voltage(-voltage);
     r3_motor.move_voltage(-voltage);
 }
 
@@ -608,15 +606,14 @@ void gyro_turning(float left_range, float right_range, bool negative, bool direc
 */
 
 void tilter_auton() {
-    set_tilter(-100);
+    set_tilter(true);
     pros::delay(400);
-    set_tilter(45);
+    set_tilter(false);
     pros::delay(800);
-    set_tilter(-100);
+    set_tilter(true);
     pros::delay(400);
-    set_tilter(45);
+    set_tilter(false);
     pros::delay(800);
-    set_tilter(0);
 }
 void new_mexico() {
     set_puttputt(50);
@@ -662,15 +659,13 @@ void skills_auton() {
     set_motors_drive(-2000);
     pros::delay(600);
     set_motors_drive(0);
-    set_tilter(127);
+    set_tilter(true);
     pros::delay(900);
-    set_tilter(60);
 
     // Moves forward and lifts the mobile goal up
     set_motors_drive(-8000);
     pros::delay(1250);
     set_motors_drive(0);
-    set_tilter(60);
     pros::delay(100);
     set_lift(127);
     pros::delay(1600);
@@ -691,9 +686,8 @@ void skills_auton() {
     set_lift(0);
 
     // Lets the mobile goal go
-    set_tilter(-127);
+    set_tilter(false);
     pros::delay(500);
-    set_tilter(0);
     set_lift(127);
     pros::delay(750);
     set_lift(0);
@@ -701,15 +695,51 @@ void skills_auton() {
     pros::delay(400);
     set_motors_drive(0);
 
+    /*
+    set_lift(-127);
+    pros::delay(500);
+    set_mogo(false);
+    pros::delay(100);
+    while (gyro.get_heading() < 304 || gyro.get_heading() > 310) {
+        set_motors_left(6000);
+    }
+    set_motors_drive(-6000);
+     pros::delay(100);
+     set_motors_drive(0);
+     set_tilter(true);
+     pros::delay(100);
+     set_lift(127);
+     pros::delay(1000);
+     set_lift(0);
+     while (gyro.get_heading() < 124 || gyro.get_heading() > 130) {
+        set_motors_left(6000);
+    }
+     set_motor_drive(-6000);
+     pros::delay(500);
+     set_motor_drive(0);
+     set_lift(-127);
+    pros::delay(650);
+    set_lift(0);
+     set_tilter(false);
+     set_lift(127);
+    pros::delay(750);
+    set_lift(0);
+    set_motors_drive(6000);
+    pros::delay(400);
+    set_motors_drive(0);
+    */
     while (gyro.get_heading() < 156 || gyro.get_heading() > 162) {
         set_motors_left(6000);
     }
     pros::delay(20);
     set_motors_drive(6000);
-    pros::delay(750);
+    pros::delay(750); //pros::delay(950);
     set_motors_drive(0);
-    set_mogo(false);
+    set_mogo(false); //set_mogo(true);
     pros::delay(500);
+    //set_motors_drive(-6000);
+    //pros::delay(1250);
+    //set_motors_drive(0);
     while (gyro.get_heading() < 217 || gyro.get_heading() > 223) {
         set_motors_left(6000);
     }
@@ -763,13 +793,12 @@ void neutral_auton() {
     set_motors_drive(-3000);
     // Grabs the goal with the claw
     pros::delay(300);
-    set_tilter(127);
+    set_tilter(true);
     pros::delay(800);
     // Drives backwards
     set_motors_drive(12000);
     pros::delay(1000);
     set_motors_drive(0);
-    set_tilter(0);
 }
 //void neutral_biggiecheese() {
 //    set_motors_drive(-12000);
