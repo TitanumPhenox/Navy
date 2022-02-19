@@ -25,10 +25,10 @@ void takeintake() {
         }
     }
     if (takeboy == true) {
+        set_take(-127);
+    } else if (master.get_digital(pros::E_CONTROLLER_DIGITAL_B)) {
         set_take(127);
-//
     } else {
         set_take(0);
-//
     }
 }
